@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'tweets/index'
+  get 'tweets/new'
+  get 'tweets/create'
+  get 'tweets/show'
+  get 'tweets/edit'
+  get 'tweets/update'
+  get 'tweets/destroy'
   root to: "main#index"
 
   get "about", to: "about#index"
@@ -19,5 +26,11 @@ Rails.application.routes.draw do
   post "password/reset", to: "password_reset#create"
   get "password/reset/edit", to: "password_reset#edit"
   patch "password/reset/edit", to: "password_reset#update"
+
+  get "/auth/twitter/callback", to: "omniauth_callbacks#twitter"
+
+  resources :twitter_accounts
+
+  resources :tweets
 
 end

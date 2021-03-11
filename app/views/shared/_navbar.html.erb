@@ -8,6 +8,8 @@
       <div class="navbar-nav">
         <%= link_to("Home", root_path, class: "nav-link #{'active' if current_page?(root_path)}") %>
         <%= link_to("About", about_path, class: "nav-link #{'active' if current_page?(about_path)}") %>
+        <%= link_to("Twitter Accounts", twitter_accounts_path, class: "nav-link #{'active' if current_page?(twitter_accounts_path)}") %>
+        <%= link_to("Tweets", tweets_path, class: "nav-link #{'active' if current_page?(tweets_path)}") %>
       </div>
       <div class="navbar-nav ms-auto mb-2 mb-lg-0">
         <% if Current.user %>
